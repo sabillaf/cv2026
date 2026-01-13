@@ -3,224 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biografi Diri | Salsabila Faudina Zahra</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <title>Curriculum Vitae Modern</title>
     <style>
-        /* CSS STYLING */
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
+        /* CSS Reset & Variabel */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #517191;
+            --accent-color: #3498db;
+            --text-gray: #555;
+            --bg-light: #f4f7f6;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            line-height: 1.6;
+            padding: 20px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        /* Header */
-        .profile-header {
-            background-color: #4e4ca5;
-            color: #fff;
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* Sidebar / Bagian Kiri */
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 30px;
         }
 
-        .profile-picture {
+        .profile-img {
             width: 150px;
             height: 150px;
+            background: #ddd;
             border-radius: 50%;
-            border: 5px solid #fff;
+            margin-bottom: 20px;
+            border: 4px solid var(--accent-color);
             object-fit: cover;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Konten Utama / Bagian Kanan */
+        .main-content {
+            flex: 2;
+            min-width: 400px;
+            padding: 40px;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        header p {
+            color: var(--accent-color);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .item {
             margin-bottom: 15px;
         }
 
-        .profile-header h1 {
-            margin: 0;
-            font-size: 2.2em;
+        .item h4 {
+            margin-bottom: 2px;
+            color: #302929;
+        }
+
+        .item span {
+            font-size: 0.85rem;
+            color: var(--accent-color);
             font-weight: 600;
         }
 
-        .tagline {
-            font-size: 1.1em;
-            font-weight: 300;
-            opacity: 0.9;
-            margin-top: 5px;
+        .item p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
         }
 
-        /* Bagian Biografi */
-        .bio-section {
-            background-color: #fff;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        /* List Prestasi */
+        .achievements ul {
+            list-style-type: square;
+            margin-left: 20px;
+            color: var(--text-gray);
         }
 
-        .bio-section h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #4e4ca5;
-            padding-bottom: 8px;
-            margin-top: 0;
-            font-size: 1.5em;
-        }
-
-        .bio-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .bio-section li {
-            margin-bottom: 12px;
-        }
-
-        /* Styling List Kegiatan (Pills) */
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skills-list li {
-            background-color: #e9ecef;
-            padding: 8px 18px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            color: #555;
-            transition: all 0.3s ease;
-            margin-bottom: 0;
-        }
-
-        .skills-list li:hover {
-            background-color: #4e4ca5;
-            color: #fff;
-            transform: translateY(-3px);
-        }
-
-        /* CSS KHUSUS KONTAK & IKON */
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 12px 20px;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            width: fit-content;
-            border: 1px solid #eee;
-            font-weight: 400;
-        }
-
-        .contact-item i {
-            font-size: 1.3em;
-            width: 25px;
-            text-align: center;
-        }
-
-        /* Warna Ikon Asli */
-        .fa-envelope { color: #ea4335; }
-        .fa-instagram { color: #E1306C; }
-        .fa-google-drive { color: #34A853; }
-
-        .contact-item:hover {
-            background-color: #4e4ca5;
-            color: #fff;
-            transform: translateX(10px);
-            border-color: #4e4ca5;
-        }
-
-        .contact-item:hover i {
-            color: #fff; /* Ikon jadi putih saat hover */
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #888;
-            font-size: 0.9em;
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header class="profile-header">
-        <div class="profile-picture-container">
-            <img src="ca.jpg" alt="Foto Profil Salsa" class="profile-picture">
-        </div>
-        <h1>Salsabila Faudina Zahra</h1>
-        <p class="tagline">Pelajar | AnimeLovers | CatLovers</p>
-    </header>
-
-    <main class="container">
-        <section class="bio-section">
-            <h2>Tentang Saya</h2>
-            <p>
-                Halo! Saya Salsa, anak ke-2 dari 3 bersaudara. Saya bersama keluarga tinggal di kawasan PT Gunung Madu Plantations. Saat ini, saya sedang menjalani tahun terakhir saya di Sekolah Menengah Atas Gunung Madu.
+<div class="container">
+    <aside class="sidebar">
+        <div class="profile-section">
+            <div style="text-align: center;">
+                <img src="ca.jpg" alt="Foto Profil" class="profile-img">
+            </div>
+            
+            <h2>CONTACT</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:faudinazahra10@gmail.com" target="_blank">faudinazahra10@gmail.com</a></p>
+                <p><strong>Drive: </strong><a href="https://drive.google.com/drive/u/2/my-drive" target="_blank"> Karya.salsabila </a> <br></p>
+                <p><strong>Instagram : </strong> <a href="https://www.instagram.com/fchzay" target=_blank">fchzay</a>
+                <p> <strong>Alamat:</strong> Lampung, Indonesia</p>
             </p>
+            </div>
+
+            <br>
+
+            <h2>Hobi</h2>
+            <div class="contact-info">
+                <p>Mendengarkan Musik</p>
+                <p>Membaca Buku</p>
+                <p>Menonton Anime</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Salsabila Faudina Zahra</h1>
+            <p>STUDENT / AnimeLovers / CatLovers</p>
+        </header>
+
+        <section class="about">
+            <h3>DESKRIPSI DIRI</h3>
+            <p>Saya adalah seorang siswa tahun terakhir di SMA GUNUNG MADU dan saat ini sedang fokus pada ujian dan bimbel. Selain menjadi seorang pelajar saya menghabiskan waktu luang dengan menonton Anime dan Kpop Idol.</p>
         </section>
 
-        <section class="bio-section">
-            <h2>Pendidikan</h2>
+        <section class="education">
+            <h3>RIWAYAT SEKOLAH</h3>
+            <div class="item">
+                <h4>SMA Gunung Madu</h4>
+                <span>2023-2026</span>
+            </div>
+            <div class="item">
+                <h4>SMP satya Dharma Sudjana</h4>
+                <span>2020-2023</span>
+            </div>
+            <div class="item">
+                <h4>SD Negri 1 Gunung Madu</h4>
+                <span>2017-2020</span>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <h3>PRESTASI</h3>
             <ul>
-                <li><strong>SMA Gunung Madu</strong> (2023 - 2026)</li>
-                <li><strong>SMP Satya Dharma Sudjana</strong> (2020 - 2023)</li>
-                <li><strong>SD Negri 1 Gunung Madu</strong> (2017 - 2020)</li>
-               <li><strong>SD Negri 2 Cempaka Nuban</strong> (2014 - 2017)</li>
+                <li>Juara 3 Pararel (2024-2025)</li>
+                <li>Lolos Judul Opsi 2025</li>
             </ul>
         </section>
 
-        <section class="bio-section">
-            <h2>Kegiatan</h2>
-            <ul class="skills-list">
-                <li>Anggota OSIS Bidang Keilmiahan (2023-2024)</li>
-                <li>Sekretaris OSIS (2024-2025)</li>
-                <li>Anggota Science Club & KIR (2023-2025)</li>
-            </ul>
-        </section>
-
-        <section class="bio-section">
-            <h2>Kontak</h2>
-            <div class="contact-container">
-                <a href="mailto:salsabilafaura07@gmail.com" class="contact-item">
-                    <i class="fas fa-envelope"></i> salsabilafaura07@gmail.com
-                </a>
-                
-                <a href="https://www.instagram.com/fchzay" target="_blank" class="contact-item">
-                    <i class="fab fa-instagram"></i> @fchzay
-                </a>
-
-                <a href="#" target="_blank" class="contact-item">
-                    <i class="fab fa-google-drive"></i> Drive saya
-                </a>
+        <section class="experience">
+            <h3>PENGALAMAN</h3>
+            <div class="item">
+                <h4>Anggota Osis Bidang Keilmiahan</h4>
+                <span>2023-2024</span>
+                <h4>Sekertaris Osis</h4>
+                <span>2024-2025</span>
+                <h4>Anggota Science Club & KIR</h4>
+                <span>2023-2025</span>
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2025 AcakSukaCiel. Dibuat dengan ❤️</p>
-    </footer>
+</div>
 
 </body>
 </html>
